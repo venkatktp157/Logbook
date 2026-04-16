@@ -1,0 +1,18 @@
+# Python cache
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Database files (Since you are using SQLite)
+*.db
+
+# The "old" directory and all its contents
+old/main.py
+old/test.py
+
+# Environment files (if you use them)
+.env
+venv/
+.venv/
