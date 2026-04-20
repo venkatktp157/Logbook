@@ -175,7 +175,7 @@ def page_six():
 
 def page_seven():
     st.title("📈 Auxiliary Engine Data 1")
-    col1, col2, col3, col4, col5, col6 = st.columns(6)
+    col1, col2, col3, col4, col5, col6, col7, col8 = st.columns(8)
 
     with col1:
         st.subheader("AE1 Exh Temp")
@@ -209,6 +209,17 @@ def page_seven():
         st.subheader("AE3 JW Temp")
         for i in range(1, 7):
             st.number_input(f"AE3 JCW Temp {i} (°C)", key=f"AE3_jw_{i}", step=0.01)
+
+    with col7:
+        st.subheader("AE4 Exh Temp")
+        for i in range(1, 7):
+            st.number_input(f"AE4 Exh Temp {i} (°C)", key=f"AE4_exh_{i}", step=0.01)
+        st.number_input("AE4 RHRS (h)", key="AE4_RHRS", step=0.01)
+
+    with col8:
+        st.subheader("AE4 JW Temp")        
+        for i in range(1, 7):
+            st.number_input(f"AE4 JCW Temp {i} (°C)", key=f"AE4_jw_{i}", step=0.01)
 
 
 def page_eight():
