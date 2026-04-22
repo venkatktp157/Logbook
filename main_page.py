@@ -141,54 +141,39 @@ with st.sidebar:
                 st.rerun()
 
 # # Logic for Authorised Developer Tools  (uncomment for streamlit community cloud deployment)
-# with st.sidebar:
-#     st.divider()
-    
-#     # Use an expander to keep the UI clean
-#     with st.expander("🛠️ Admin Access"):
-#         input_pass = st.text_input("Enter Developer Key", type="password")
-        
-#         # Accessing the password from the secrets file
-#         if input_pass == st.secrets["DEV_PASSWORD"]:
-#             st.success("Access Granted")
-            
-#             if st.button("♻️ Reset Database & Schema"):
-#                 try:
-#                     reset_testing_db()
-#                     st.success("Database recreated successfully!")
-#                     # Use st.rerun() to refresh the UI with the new schema
-#                     st.rerun()
-#                 except Exception as e:
-#                     st.error(f"Reset failed: {e}")
-        
-#         elif input_pass != "":
-#             st.error("Incorrect Key")
-
-# In main_page.py or wherever your sidebar logic lives  (for local running, comment out when deploying to streamlit community cloud to avoid exposing reset functionality to end users)
-import streamlit as st
-from database import reset_testing_db
-
 with st.sidebar:
     st.divider()
-    st.subheader("Developer Tools")
-    if st.button("♻️ Reset Schema & Clear Data"):
-        reset_testing_db()
-        st.success("Database recreated using latest config.py!")
-        st.rerun() # Refresh the app to show the new structure
+    
+    # Use an expander to keep the UI clean
+    with st.expander("🛠️ Admin Access"):
+        input_pass = st.text_input("Enter Developer Key", type="password")
+        
+        # Accessing the password from the secrets file
+        if input_pass == st.secrets["DEV_PASSWORD"]:
+            st.success("Access Granted")
+            
+            if st.button("♻️ Reset Database & Schema"):
+                try:
+                    reset_testing_db()
+                    st.success("Database recreated successfully!")
+                    # Use st.rerun() to refresh the UI with the new schema
+                    st.rerun()
+                except Exception as e:
+                    st.error(f"Reset failed: {e}")
+        
+        elif input_pass != "":
+            st.error("Incorrect Key")
 
-# main.py sidebar
+# In main_page.py or wherever your sidebar logic lives  (for local running, comment out when deploying to streamlit community cloud to avoid exposing reset functionality to end users)
+# import streamlit as st
+# from database import reset_testing_db
 
-# log_date = st.date_input("Select Log Date", value=date.today())
-
-# if st.button("📂 Load Data for this Date"):
-#     existing_data = db.get_record_by_date(log_date)
-#     if not existing_data.empty:
-#         for key in ALL_KEYS:
-#             st.session_state[key] = existing_data.iloc[0][key]
-#         st.rerun()
-#     else:
-#         st.info("No data found for this date. Starting with empty inputs.")        
-
-# main.py (Sidebar section)
+# with st.sidebar:
+#     st.divider()
+#     st.subheader("Developer Tools")
+#     if st.button("♻️ Reset Schema & Clear Data"):
+#         reset_testing_db()
+#         st.success("Database recreated using latest config.py!")
+#         st.rerun() # Refresh the app to show the new structure
 
 pg.run()
