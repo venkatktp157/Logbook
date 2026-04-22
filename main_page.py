@@ -5,6 +5,8 @@ from config import ALL_KEYS
 import database as db
 import pages_content as ui
 import notes_manager as nm  # Import the new manager
+from database import reset_testing_db
+
 
 # --- CONFIGURATION ---
 st.set_page_config(layout='wide', page_title="Engine Data Logger")
@@ -137,7 +139,13 @@ with st.sidebar:
                 st.success("All notes wiped.")
                 st.rerun()
 
-
+with st.sidebar:
+    st.divider()
+    st.subheader("Developer Tools")
+    if st.button("♻️ Reset Schema & Clear Data"):
+        reset_testing_db()
+        st.success("Database recreated using latest config.py!")
+        st.rerun() # Refresh the app to show the new structure
 
 # main.py sidebar
 

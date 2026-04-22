@@ -84,3 +84,18 @@ def delete_record(log_date=None, purge_all=False):
         st.error(f"Database error: {e}")
     finally:
         conn.close()
+
+def reset_testing_db():
+    import os
+    import time
+    
+    # Optional: ensure all connections are closed if using a global connection
+    if os.path.exists(DB_NAME):
+        try:
+            os.remove(DB_NAME)
+            time.sleep(0.1) # Small delay to let the OS catch up
+        except PermissionError:
+            st.error("Could not reset: Database is currently in use.")
+            return
+            
+    init_db()        
