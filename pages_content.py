@@ -401,3 +401,62 @@ def page_ten():
         st.number_input("Feed Water Press (bar)", key="Feed_water_press", step=0.01)
         st.number_input("Fuel oil Temp (°C)", key="BLR_FO_TEMP", step=0.01)
         st.number_input("Fuel oil Press (bar)", key="BLR_FO_PRESS", step=0.01)
+
+def page_eleven():       
+  st.title("📈 Navigation Parameters")
+  col1, col2, col3, col4 = st.columns(4)
+
+  with col1:
+      st.subheader("Summary 1")
+      st.number_input("Draft_fwd", key="Draft_fwd", step=0.01)
+      st.number_input("Draft_aft", key="Draft_aft", step=0.01)
+      st.number_input("Draft_mid_port", key="Draft_mid_port", step=0.01)
+      st.number_input("Draft_mid_stbd", key="Draft_mid_stbd", step=0.01)
+      st.number_input("Displacement", key="Displacement", step=0.01)
+      st.number_input("Seastate", key="Seastate", step=0.01)
+      st.number_input("Rudder_angle (°)", key="Rudder_angle", step=0.01)
+      st.number_input("Rate_of_turn (°/min) ", key="Rate_of_turn", step=0.01)
+      st.number_input("Depth_below_keel (m)", key="Depth_below_keel", step=0.01)      
+
+  with col2:
+      st.subheader("Summary 2")
+      st.number_input("Apparent Wind Speed (m/s)", key="App_Wind_speed", step=0.01)
+      st.number_input("Apparent Wind Direction (°)", key="App_Wind_dir", step=0.01)
+      st.number_input("Air Temperature (°C)", key="Air_temp", step=0.01)
+      st.number_input("Air Pressure (mmHg)", key="Air_press", step=0.01)
+      st.number_input("Relative Humidity (%)", key="Rel_Humidity", step=0.01)
+      st.number_input("Speed over Ground (knots)", key="SOG", step=0.01)
+      st.number_input("Speed through Water (knots)", key="STW", step=0.01)
+      st.number_input("Course (°)", key="Course", step=0.01)
+      st.number_input("Heading (°)", key="Heading", step=0.01)
+
+  with col3:
+      st.subheader("Summary 3")
+      st.number_input("Latitude", key="Latitude", step=0.000001, format="%.6f")
+      st.number_input("Longitude", key="Longitude", step=0.000001, format="%.6f")
+      st.number_input("Distance to Go (nm)", key="DTG", step=0.01)      
+      st.number_input("Wave Height (m)", key="Wave_height", step=0.01)
+      st.number_input("Wave Direction (°)", key="Wave_dir", step=0.01)
+      st.number_input("Swell Height (m)", key="Swell_height", step=0.01)
+      st.number_input("Swell Direction (°)", key="Swell_dir", step=0.01)
+      st.number_input("Current Speed (knots)", key="Current_speed", step=0.01)
+      st.number_input("Current Direction (°)", key="Current_dir", step=0.01)
+
+  # --- 1. GLOBAL INITIALIZATION (At the top of your file) ---
+  if "ETA" not in st.session_state:        
+    st.session_state["ETA"] = "12:00"
+
+  # --- 2. LAYOUT ---
+  # If this is inside a function or a specific page, 
+  # make sure this function is called immediately on run.
+  with col4:
+     st.subheader("Summary 4")
+    
+     # This will now show up immediately because it's not hidden 
+     # behind a 'if button_clicked:' check.
+     st.text_input(
+         label="ETA (hh:mm)", 
+         max_chars=5, 
+         key="ETA",
+         help="Enter time in 24-hour format (e.g., 14:30)"
+     )

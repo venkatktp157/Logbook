@@ -28,7 +28,8 @@ pg = st.navigation([
     st.Page(ui.page_seven, title="AE Parameters 1", icon="📊"),
     st.Page(ui.page_eight, title="AE Parameters 2", icon="📊"), 
     st.Page(ui.page_nine, title="Other Parameters", icon="📊"),
-    st.Page(ui.page_ten, title="Boiler & EGB Parameters", icon="📊")
+    st.Page(ui.page_ten, title="Boiler & EGB Parameters", icon="📊"),
+    st.Page(ui.page_eleven, title="Navigation Parameters", icon="📊")
 ])
 
 # # --- SIDEBAR PARAMETER INPUTS---
@@ -139,29 +140,41 @@ with st.sidebar:
                 st.success("All notes wiped.")
                 st.rerun()
 
-# Logic for Authorised Developer Tools
+# # Logic for Authorised Developer Tools  (uncomment for streamlit community cloud deployment)
+# with st.sidebar:
+#     st.divider()
+    
+#     # Use an expander to keep the UI clean
+#     with st.expander("🛠️ Admin Access"):
+#         input_pass = st.text_input("Enter Developer Key", type="password")
+        
+#         # Accessing the password from the secrets file
+#         if input_pass == st.secrets["DEV_PASSWORD"]:
+#             st.success("Access Granted")
+            
+#             if st.button("♻️ Reset Database & Schema"):
+#                 try:
+#                     reset_testing_db()
+#                     st.success("Database recreated successfully!")
+#                     # Use st.rerun() to refresh the UI with the new schema
+#                     st.rerun()
+#                 except Exception as e:
+#                     st.error(f"Reset failed: {e}")
+        
+#         elif input_pass != "":
+#             st.error("Incorrect Key")
+
+# In main_page.py or wherever your sidebar logic lives  (for local running, comment out when deploying to streamlit community cloud to avoid exposing reset functionality to end users)
+import streamlit as st
+from database import reset_testing_db
+
 with st.sidebar:
     st.divider()
-    
-    # Use an expander to keep the UI clean
-    with st.expander("🛠️ Admin Access"):
-        input_pass = st.text_input("Enter Developer Key", type="password")
-        
-        # Accessing the password from the secrets file
-        if input_pass == st.secrets["DEV_PASSWORD"]:
-            st.success("Access Granted")
-            
-            if st.button("♻️ Reset Database & Schema"):
-                try:
-                    reset_testing_db()
-                    st.success("Database recreated successfully!")
-                    # Use st.rerun() to refresh the UI with the new schema
-                    st.rerun()
-                except Exception as e:
-                    st.error(f"Reset failed: {e}")
-        
-        elif input_pass != "":
-            st.error("Incorrect Key")
+    st.subheader("Developer Tools")
+    if st.button("♻️ Reset Schema & Clear Data"):
+        reset_testing_db()
+        st.success("Database recreated using latest config.py!")
+        st.rerun() # Refresh the app to show the new structure
 
 # main.py sidebar
 
@@ -177,7 +190,5 @@ with st.sidebar:
 #         st.info("No data found for this date. Starting with empty inputs.")        
 
 # main.py (Sidebar section)
-
-
 
 pg.run()

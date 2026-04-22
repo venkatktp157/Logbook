@@ -90,5 +90,17 @@ PAGE_10_KEYS = [
     "EGB_Circwater_press", "Hotwell_temp", "Hotwell_lvl"
 ]
 
-ALL_KEYS = PAGE_1_KEYS + PAGE_2_KEYS + PAGE_3_KEYS + PAGE_4_KEYS + PAGE_5_KEYS + PAGE_6_KEYS + PAGE_7_KEYS+ PAGE_8_KEYS + PAGE_9_KEYS + PAGE_10_KEYS
+PAGE_11_KEYS = [
+    "Draft_fwd", "Draft_aft", "Draft_mid_port", "Draft_mid_stbd", "Displacement", "Seastate",
+    "App_Wind_speed", "App_Wind_dir", "Air_temp", "Air_press", "Rel_Humidity", "Wave_height", "Wave_dir",
+    "Swell_height", "Swell_dir", "Current_speed", "Current_dir", "SOG", "STW",
+    "Course", "Heading", "Rudder_angle", "Rate_of_turn", "Depth_below_keel",
+    "Latitude", "Longitude", "DTG", "ETA"
+]
+
+ALL_KEYS = (
+    PAGE_1_KEYS + PAGE_2_KEYS + PAGE_3_KEYS + PAGE_4_KEYS + PAGE_5_KEYS + PAGE_6_KEYS 
+    + PAGE_7_KEYS+ PAGE_8_KEYS + PAGE_9_KEYS + PAGE_10_KEYS + PAGE_11_KEYS
+)
+
 DB_NAME = "engine_data.db"
