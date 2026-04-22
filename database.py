@@ -4,15 +4,6 @@ import pandas as pd
 import streamlit as st
 from config import ALL_KEYS, DB_NAME
 
-# def init_db():
-#     conn = sqlite3.connect(DB_NAME)
-#     c = conn.cursor()
-#     columns = ", ".join([f"{key} REAL" for key in ALL_KEYS])
-#     c.execute(f'''CREATE TABLE IF NOT EXISTS logs (log_date TEXT PRIMARY KEY, {columns})''')
-#     conn.commit()
-#     conn.close()
-
-# database.py
 
 def init_db():
     conn = sqlite3.connect(DB_NAME)
@@ -70,13 +61,6 @@ def get_all_data_df():
     conn.close()
     return df
 
-# # database.py
-
-# def get_record_by_date(selected_date):
-#     conn = sqlite3.connect(DB_NAME)
-#     df = pd.read_sql_query("SELECT * FROM logs WHERE log_date = ?", conn, params=(str(selected_date),))
-#     conn.close()
-#     return df
 
 # database.py
 

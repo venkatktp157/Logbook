@@ -16,3 +16,7 @@ old/test.py
 .env
 venv/
 .venv/
+
+#db
+engine_data.db
+
