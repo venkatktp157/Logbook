@@ -3,11 +3,11 @@ import streamlit as st
 
 def page_one():
     st.title("📈 Main Engine Data 1")
-    col1, col2, col3, col4 = st.columns(4)
+    col1, col2, col3, col4, col5 = st.columns(5)
 
     with col1:
         st.subheader("Engine Control")
-        for k in ["MCR_Power", "Shaft_Power", "Shaft_rpm", "Engine_Load", "Throttle_Pos", "Rev_counter", "ME_Rhrs", "ME_Rhrs_Total"]:
+        for k in ["MCR_Power(KW)", "Shaft_Power(KW)", "Shaft_rpm", "Engine_Load", "Throttle_Pos", "Rev_counter", "ME_Rhrs", "ME_Rhrs_Total"]:
             st.number_input(k.replace("_", " "), key=k, step=0.01)
 
     with col2:
@@ -24,6 +24,13 @@ def page_one():
         st.subheader("PCO Temp")
         for i in range(1, 7):
             st.number_input(f"PCO Temp {i} (°C)", key=f"pco_{i}", step=0.01)
+
+    with col5:
+        st.subheader("Torque")
+        st.number_input("Torque Meter (kNm)", key="Torque_meter", step=0.01)
+        st.number_input("Shaft Torque (kNm)", key="Shaft_Torque", step=0.01)
+        st.number_input("Shaft Torque Energy (kWh)", key="Shaft_Torque_Energy", step=0.01)
+       
 
 def page_two():
     st.title("📈 Main Engine Data 2")
@@ -51,6 +58,7 @@ def page_two():
         st.number_input("TC Exhaust Gas Out Temp (°C)", key="TC_exhgasout_temp", step=0.01)
         st.number_input("Turboblower LO Temp (°C)", key="Turboblower_LO_temp", step=0.01)
         st.number_input("Turbine LO Temp (°C)", key="Turbine_LO_temp", step=0.01)
+        st.number_input("Water Content (%)", key="Water_Content", step=0.01)
 
     with col3:
         st.subheader("LT/HT System")
@@ -65,7 +73,7 @@ def page_two():
 
 def page_three():
     st.title("📈 Main Engine Data 3")
-    col1, col2 = st.columns(2)    
+    col1, col2, col3 = st.columns(3)    
 
     with col1:
         st.subheader("Cooling & Fuel")
@@ -91,24 +99,31 @@ def page_three():
         st.number_input("HTpp Out Press (bar)", key="HTpp_out_press", step=0.01)
         st.number_input("LTpp In Press (bar)", key="LTpp_in_press", step=0.01)
         st.number_input("LTpp Out Press (bar)", key="LTpp_out_press", step=0.01)
-        
+
+    with col3:
+        st.subheader("Backwash Counters")
+        st.number_input("LO Filter Backwash Counter", key="LOfilter_backwash_ctr", step=1)
+        st.number_input("ME FO Filter Backwash Counter", key="MEFOfilter_backwash_ctr", step=1) 
+        st.number_input("AE FO Filter Backwash Counter", key="AEFOfilter_backwash_ctr", step=1)       
 
 def page_four():
     st.title("📈 Main Engine Data (ME-B)")
-    col1, col2, col3 = st.columns(3)
+    col1, col2, col3, col4 = st.columns(4)
 
     with col1:
         st.subheader("Hydraulic System")
+        st.number_input("Hyd Oil Set Press (bar)", key="Hyd_oil_setpressB", step=0.01)
         st.number_input("Hyd Oil Press (bar)", key="Hyd_oil_pressB", step=0.01)
-        st.number_input("Oil In Press (bar)", key="Oil_In_pressB", step=0.01)
-        st.number_input("Cont Oil Press (bar)", key="Cont_oil_pressB", step=0.01)
+        st.number_input("Oil In Press (bar)", key="Oil_In_pressB", step=0.01)        
         st.number_input("Hyd Filter DP (bar)", key="Hyd_filter_DP_B", step=0.01)
+        st.number_input("Hyd Oil Backwash Filter Counter", key="Hydoil_backwashfilter_ctrB", step=1)
 
     with col2:
         st.subheader("Hydraulic Pumps")
         st.number_input("Hyd Pump Press 1 (bar)", key="Hyd_pump_press1B", step=0.01)
         st.number_input("Hyd Pump Press 2 (bar)", key="Hyd_pump_press2B", step=0.01)
-        
+        st.number_input("Hyd Pump Load 1 (%)", key="Hyd_pump_load1B", step=0.01)
+        st.number_input("Hyd Pump Load 2 (%)", key="Hyd_pump_load2B", step=0.01)        
 
     with col3:
         st.subheader("Controls")
@@ -117,18 +132,39 @@ def page_four():
         st.number_input("Fuel Index Actual (%)", key="Fuel_index_actualB", step=0.01)
         st.number_input("RPM Setpoint", key="RPM_SPB", step=0.01)
         st.number_input("RPM Actual", key="RPM_actualB", step=0.01)
-        st.number_input("Start Air Press (bar)", key="Start_air_pressB", step=0.01)      
+        st.number_input("Start Air Press (bar)", key="Start_air_pressB", step=0.01)
+        st.number_input("Control Air Press (bar)", key="Cont_air_pressB", step=0.01)
+        st.number_input("Pitch (%)-only if CPP", key="PitchB", step=0.01)
+
+    with col4:
+        st.subheader("Performance")
+        st.number_input("Pmax (bar)", key="PmaxB", step=0.01)
+        st.number_input("Pcomp (bar)", key="PcompB", step=0.01)
+        st.number_input("Exhaust Valve Timing (°ATDC)", key="Exhvv_timingB", step=0.01)
+        st.number_input("Estimated Engine Load (%)", key="Est_Engine_LoadB", step=0.01)
+        st.number_input("Speed Setpoint (rpm)", key="Speedsetpoint_rpmB", step=0.01)
+        st.number_input("Speed Actual (rpm)", key="Speedactual_rpmB", step=0.01)
+        st.number_input("Fuel Index Setpoint (%)", key="Fuelindex_setpointB", step=0.01)     
+        st.number_input("Scav Air Actual Press (bar)", key="Pscav_actualB", step=0.01)   
+        st.number_input("ECS Insulation (Ohms)", key="ECS_insulation", step=0.01)
 
 def page_five():
     st.title("📈 Main Engine Data (ME-C)")
-    col1, col2 = st.columns(2)
+    col1, col2, col3 = st.columns(3)
 
     with col1:
         st.subheader("Hydraulic System")
-        st.number_input("Hyd Oil Press (bar)", key="Hyd_oil_pressC", step=0.01)
-        st.number_input("Oil In Press (bar)", key="Oil_In_pressC", step=0.01)
-        st.number_input("Cont Oil Press (bar)", key="Cont_oil_pressC", step=0.01)
+        st.number_input("Hyd Oil Set Press (bar)", key="Hyd_oil_setpressC", step=0.01)
+        st.number_input("Hyd Oil Press bar)", key="Hyd_oil_pressC", step=0.01)
+        st.number_input("Oil In Press (bar)", key="Oil_In_pressC", step=0.01)       
         st.number_input("Hyd Filter DP (bar)", key="Hyd_filter_DP_C", step=0.01)
+        st.number_input("Hyd Oil Backwash Filter Counter", key="Hydoil_backwashfilter_ctrC", step=1)
+        st.number_input("Swashplate Position 1 (%)", key="Swashplate_pos1", step=0.01)
+        st.number_input("Swashplate Position 2 (%)", key="Swashplate_pos2", step=0.01)
+        st.number_input("Swashplate Position 3 (%)", key="Swashplate_pos3", step=0.01)
+        st.number_input("Controller Swashplate Pump", key="Controller", min_value=1, max_value=3,step=1)
+        st.number_input("Follower Swashplate Pump1", key="Follower1", min_value=1, max_value=3,step=1)
+        st.number_input("Follower Swashplate Pump2", key="Follower2", min_value=1, max_value=3,step=1)
 
     with col2:
         st.subheader("Controls")
@@ -137,7 +173,21 @@ def page_five():
         st.number_input("Fuel Index Actual (%)", key="Fuel_index_actualC", step=0.01)
         st.number_input("RPM Setpoint", key="RPM_SPC", step=0.01)
         st.number_input("RPM Actual", key="RPM_actualC", step=0.01)
-        st.number_input("Start Air Press (bar)", key="Start_air_pressC", step=0.01)     
+        st.number_input("Start Air Press (bar)", key="Start_air_pressC", step=0.01)  
+        st.number_input("Control Air Press (bar)", key="Cont_air_pressC", step=0.01)  
+        st.number_input("Pitch (%)-only if CPP", key="PitchC", step=0.01) 
+
+    with col3:
+        st.subheader("Performance")
+        st.number_input("Pmax (bar)", key="PmaxC", step=0.01)
+        st.number_input("Pcomp (bar)", key="PcompC", step=0.01)
+        st.number_input("Exhaust Valve Timing (°ATDC)", key="Exhvv_timingC", step=0.01)
+        st.number_input("Estimated Engine Load (%)", key="Est_Engine_LoadC", step=0.01)
+        st.number_input("Speed Setpoint (rpm)", key="Speedsetpoint_rpmC", step=0.01)
+        st.number_input("Speed Actual (rpm)", key="Speedactual_rpmC", step=0.01)
+        st.number_input("Fuel Index Setpoint (%)", key="Fuelindex_setpointC", step=0.01)     
+        st.number_input("Scav Air Actual Press (bar)", key="Pscav_actualC", step=0.01)
+        st.number_input("ECS Insulation (Ohms)", key="ECS_insulationC", step=0.01)
 
 def page_six():
     st.title("📈 LNG Parameters")
@@ -320,13 +370,14 @@ def page_nine():
 
     with col2:
         st.subheader("Summary 2")
-        st.number_input("ME CLO FMR (lt/hr)", key="ME_CLO_FMR", step=0.0001, format="%.4f")
+        st.number_input("ME CLO FMR (lt/hr)", key="ME_CLO_FMR", step=0.01, format="%.2f")
+        st.number_input("CLO Basic Feedrate (g/KWh)", key="CLO_Basic_Feedrate", step=0.01, format="%.2f")       
         st.number_input("ME F.O Cons (MT)", key="ME_FO_CONS", step=0.01)
         st.number_input("AE F.O Cons (MT)", key="AE_FO_CONS", step=0.01)
         st.number_input("Boiler F.O Cons (MT)", key="BOILER_FO_CONS", step=0.01)
-        st.number_input("ME FMR (kg/hr)", key="ME_FMR", step=0.0001, format="%.4f")
-        st.number_input("AE FMR (kg/hr)", key="AE_FMR", step=0.0001, format="%.4f")
-        st.number_input("Boiler FMR (kg/hr)", key="BOILER_FMR", step=0.0001, format="%.4f")            
+        st.number_input("ME FMR (kg/hr)", key="ME_FMR", step=0.01, format="%.2f")
+        st.number_input("AE FMR (kg/hr)", key="AE_FMR", step=0.01, format="%.2f")
+        st.number_input("Boiler FMR (kg/hr)", key="BOILER_FMR", step=0.01, format="%.2f")            
 
 def page_ten():
     st.title("📈 EGB & Boiler Parameters")

@@ -1,6 +1,7 @@
 # config.py
 PAGE_1_KEYS = [
     "MCR_Power", "Shaft_Power", "Shaft_rpm", "Engine_Load", "Throttle_Pos", "Rev_counter", "ME_Rhrs", "ME_Rhrs_Total",
+    "Torque_meter", "Shaft_Torque", "Shaft_Torque_Energy", 
     "exh_1", "exh_2", "exh_3", "exh_4", "exh_5", "exh_6",
     "jw_1", "jw_2", "jw_3", "jw_4", "jw_5", "jw_6",
     "pco_1", "pco_2", "pco_3", "pco_4", "pco_5", "pco_6"
@@ -8,7 +9,7 @@ PAGE_1_KEYS = [
 
 PAGE_2_KEYS = [
     "TC_rpm", "Scavenge_pr", "Scavenge_temp", "LT_in_temp", "LT_out_temp",
-    "LO_in_t", "LO_out_t", "LO_pr", "LO_lvl", "HT_in_t", "HT_out_t",
+    "LO_in_t", "LO_out_t", "LO_pr", "LO_lvl", "HT_in_t", "HT_out_t", "Water_Content"
     "TC_airfilter_DP", "Aircooler_DP", "Aircooler_airin_temp", "Aircooler_airout_temp",
     "TC_exhgasin_temp", "TC_exhgasout_temp", "Turboblower_LO_temp", "Turbine_LO_temp",
     "HT_in_press", "HT_out_press", "LT_in_press", "LT_out_press",
@@ -19,19 +20,23 @@ PAGE_3_KEYS = [
     "JCW_in_temp", "PCO_in_temp", "LO_in_temp", "Thustbrg_out_temp", "Axial_vib",
     "FO_in_temp", "ME_FO_Flowmeter", "ME_fuel_viscosity", "FO_LCV",
     "LOcool_LOin_temp", "LOcool_LOout_temp", "LOcool_CWin_temp", "LOcool_CWout_temp", 
-    "LOpp_in_press", "LOpp_out_press", "HTpp_in_press", "HTpp_out_press", "LTpp_in_press", "LTpp_out_press"
+    "LOpp_in_press", "LOpp_out_press", "HTpp_in_press", "HTpp_out_press", "LTpp_in_press", "LTpp_out_press",
+    "LOfilter_backwash_ctr", "MEFOfilter_backwash_ctr", "AEFOfilter_backwash_ctr"
 ]
 
 PAGE_4_KEYS = [
-    "Hyd_oil_pressB", "Oil_In_pressB", "Cont_oil_pressB", "Hyd_filter_DP_B",
-    "Hyd_pump_press1B", "Hyd_pump_press2B", "Scavair_press_receiverB", 
-    "Fuel_index_limiterB", "Fuel_index_actualB", "RPM_SPB", "RPM_actualB", "Start_air_pressB"
+    "Hyd_oil_setpressB", "Hyd_oil_pressB", "Cont_oil_pressB", "Hyd_filter_DP_B", "Hydoil_backwashfilter_ctrB", "ECS_insulationB",
+    "Hyd_pump_press1B", "Hyd_pump_press2B", "Hyd_pump_load1B", "Hyd_pump_load2B", "Scavair_press_receiverB", "PitchB",
+    "Fuel_index_limiterB", "Fuel_index_actualB", "RPM_SPB", "RPM_actualB", "Start_air_pressB", "Cont_air_pressB",
+    "PmaxB", "PcompB", "Exhvv_timingB", "Est_Engine_LoadB", "Speedsetpoint_rpmB", "Speedactual_rpmB", "Fuelindex_setpointB", "Pscav_actualB"
 ]
 
 PAGE_5_KEYS = [
-    "Hyd_oil_pressC", "Oil_In_pressC", "Cont_oil_pressC", "Hyd_filter_DP_C",
-    "Scavair_press_receiverC", "Fuel_index_limiterC", "Fuel_index_actualC", 
-    "RPM_SPC", "RPM_actualC", "Start_air_pressC"
+    "Hyd_oil_setpressC", "Hyd_oil_pressC", "Cont_oil_pressC", "Hyd_filter_DP_C", "Hydoil_backwashfilter_ctrC",
+    "Scavair_press_receiverC", "PitchC", "Fuel_index_limiterC", "Fuel_index_actualC", "ECS_insulationC",
+    "RPM_SPC", "RPM_actualC", "Start_air_pressC", "Cont_air_pressC",
+    "PmaxC", "PcompC", "Exhvv_timingC", "Est_Engine_LoadC", "Speedsetpoint_rpmC", "Speedactual_rpmC", "Fuelindex_setpointC", "Pscav_actualC",
+    "Swashplate_pos1", "Swashplate_pos2", "Swashplate_pos3", "Controller", "Follower1", "Follower2"
 ]
 
 PAGE_6_KEYS = [
@@ -75,7 +80,7 @@ PAGE_8_KEYS = [
 
 PAGE_9_KEYS = [
     "SW_TEMP", "SW_PRESS", "ER_TEMP", "SWpp_in_press", "SWpp_out_press",
-    "ME_CLO_FMR", "ME_FO_CONS", "AE_FO_CONS", "BOILER_FO_CONS", 
+    "ME_CLO_FMR", "CLO_Basic_Feedrate", "ME_FO_CONS", "AE_FO_CONS", "BOILER_FO_CONS", 
     "ME_FMR", "AE_FMR", "BOILER_FMR"
 ]
 
