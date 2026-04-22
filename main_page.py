@@ -139,13 +139,29 @@ with st.sidebar:
                 st.success("All notes wiped.")
                 st.rerun()
 
+# Logic for Authorised Developer Tools
 with st.sidebar:
     st.divider()
-    st.subheader("Developer Tools")
-    if st.button("♻️ Reset Schema & Clear Data"):
-        reset_testing_db()
-        st.success("Database recreated using latest config.py!")
-        st.rerun() # Refresh the app to show the new structure
+    
+    # Use an expander to keep the UI clean
+    with st.expander("🛠️ Admin Access"):
+        input_pass = st.text_input("Enter Developer Key", type="password")
+        
+        # Accessing the password from the secrets file
+        if input_pass == st.secrets["DEV_PASSWORD"]:
+            st.success("Access Granted")
+            
+            if st.button("♻️ Reset Database & Schema"):
+                try:
+                    reset_testing_db()
+                    st.success("Database recreated successfully!")
+                    # Use st.rerun() to refresh the UI with the new schema
+                    st.rerun()
+                except Exception as e:
+                    st.error(f"Reset failed: {e}")
+        
+        elif input_pass != "":
+            st.error("Incorrect Key")
 
 # main.py sidebar
 
