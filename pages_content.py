@@ -479,6 +479,7 @@ def page_twelve():
         st.number_input("Cooler Oil Outlet Temperature (°C)", key="Cooler_OilOut_temp", step=0.01)
 
     with col2:
+        st.subheader("Summary 2")
         st.number_input("Service Oil Pressure Ahead (bar)", key="Servooilpress_ahead", step=0.01)
         st.number_input("Service Oil Pressure Aft (bar)", key="Servooilpress_astern", step=0.01)
         st.number_input("CPP Pitch (%)", key="CPP_Pitch", step=0.01)
