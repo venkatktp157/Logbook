@@ -528,11 +528,11 @@ def page_fourteen():
     
 
 def page_fifteen():
+    st.title("📈 Ref. AC, FWG parameters")
     col1, col2 = st.columns(2)
-    
-    with col1:
 
-        st.title("📈 Ref. AC")
+    with col1:
+        st.subheader("Refrigeration & AC")
         st.number_input("Fish Room Temp (°C)", key="Fishroom_temp", step=0.01)
         st.number_input("Meat Room Temp (°C)", key="Meatroom_temp", step=0.01)
         st.number_input("Vegetable Room Temp (°C)", key="Vegroom_temp", step=0.01)
