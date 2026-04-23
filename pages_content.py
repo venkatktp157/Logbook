@@ -504,5 +504,22 @@ def page_thirteen():
     with col2:
         st.subheader("Summary 2")
         st.number_input("Engine Load (%)", key="CPP_Engine_load", step=0.01)
-        st.number_input("LO Filter Clog Indicator", key="LOfilterclog_ind", step=1)
+        st.selectbox("LO Filter Clog Indicator",options=["Green", "Yellow", "Orange", "Red"],key="LOfilterclog_ind")
         st.number_input("Remote Servo Pressure (bar)", key="Rem_servopress", step=0.01)       
+
+
+def page_fourteen():
+    st.title("📈 KAMEWA CPP Parameters")
+    col1 = st.columns(1)
+
+    with col1:
+        st.subheader("Summary 1")
+        st.number_input("Servo pump pressure (MPa)", key="Servopump_press", step=0.01)
+        st.number_input("Static pressure (MPa)", key="Static_press", step=0.01)
+        st.number_input("Servo pressure (MPa)", key="Servopress", step=0.01)
+        st.number_input("Booster pressure (MPa)", key="Boosterpress", step=0.01)
+        st.selectbox("Standby pump status", options=["Off", "On"], key="Stby_pp_status")
+        st.selectbox("LO return filter clogging indicator", options=["Green", "Yellow", "Orange", "Red"], key="LO_rtrnfltr_clogind_color")
+    
+
+       

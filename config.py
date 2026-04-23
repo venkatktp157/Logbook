@@ -108,9 +108,13 @@ PAGE_13_KEYS = [
     "CPP_Engine_load", "LOfilterclog_ind", "Rem_servopress"
 ]
 
+PAGE_14_KEYS = [
+    "Servopump_press", "Static_press", "Servopress", "Boosterpress", "Stby_pp_status", "LO_rtrnfltr_clogind_color" 
+]
+
 ALL_KEYS = (
     PAGE_1_KEYS + PAGE_2_KEYS + PAGE_3_KEYS + PAGE_4_KEYS + PAGE_5_KEYS + PAGE_6_KEYS 
-    + PAGE_7_KEYS+ PAGE_8_KEYS + PAGE_9_KEYS + PAGE_10_KEYS + PAGE_11_KEYS + PAGE_12_KEYS + PAGE_13_KEYS
+    + PAGE_7_KEYS+ PAGE_8_KEYS + PAGE_9_KEYS + PAGE_10_KEYS + PAGE_11_KEYS + PAGE_12_KEYS + PAGE_13_KEYS + PAGE_14_KEYS
 )
 
 DB_NAME = "engine_data.db"
