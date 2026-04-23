@@ -95,12 +95,17 @@ PAGE_11_KEYS = [
     "App_Wind_speed", "App_Wind_dir", "Air_temp", "Air_press", "Rel_Humidity", "Wave_height", "Wave_dir",
     "Swell_height", "Swell_dir", "Current_speed", "Current_dir", "SOG", "STW",
     "Course", "Heading", "Rudder_angle", "Rate_of_turn", "Depth_below_keel",
-    "Latitude", "Longitude", "DTG", "ETA"
+    "Latitude", "Longitude", "DTG", "Eng_miles","Obs_miles", "Slip", "ETA"
 ]
+
+PAGE_12_KEYS =[
+    "Ambient_temp", "Servooil_temp", "CWtemp_in", "CWtemp_out", "Cooler_OilIn_temp", "Cooler_OilOut_temp",
+    "Servooilpress_ahead", "Servooilpress_astern", "CPP_Pitch", "Running_Pump_no", "Running_pump_load","Sumptk_level"
+] 
 
 ALL_KEYS = (
     PAGE_1_KEYS + PAGE_2_KEYS + PAGE_3_KEYS + PAGE_4_KEYS + PAGE_5_KEYS + PAGE_6_KEYS 
-    + PAGE_7_KEYS+ PAGE_8_KEYS + PAGE_9_KEYS + PAGE_10_KEYS + PAGE_11_KEYS
+    + PAGE_7_KEYS+ PAGE_8_KEYS + PAGE_9_KEYS + PAGE_10_KEYS + PAGE_11_KEYS + PAGE_12_KEYS
 )
 
 DB_NAME = "engine_data.db"

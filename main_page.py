@@ -29,7 +29,8 @@ pg = st.navigation([
     st.Page(ui.page_eight, title="AE Parameters 2", icon="📊"), 
     st.Page(ui.page_nine, title="Other Parameters", icon="📊"),
     st.Page(ui.page_ten, title="Boiler & EGB Parameters", icon="📊"),
-    st.Page(ui.page_eleven, title="Navigation Parameters", icon="📊")
+    st.Page(ui.page_eleven, title="Navigation Parameters", icon="📊"),
+    st.Page(ui.page_twelve, title="CPP Common Parameters", icon="📊")
 ])
 
 # # --- SIDEBAR PARAMETER INPUTS---
