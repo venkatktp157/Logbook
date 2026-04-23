@@ -21,7 +21,9 @@ PAGE_3_KEYS = [
     "FO_in_temp", "ME_FO_Flowmeter", "ME_fuel_viscosity", "FO_LCV",
     "LOcool_LOin_temp", "LOcool_LOout_temp", "LOcool_CWin_temp", "LOcool_CWout_temp", 
     "LOpp_in_press", "LOpp_out_press", "HTpp_in_press", "HTpp_out_press", "LTpp_in_press", "LTpp_out_press",
-    "LOfilter_backwash_ctr", "MEFOfilter_backwash_ctr", "AEFOfilter_backwash_ctr"
+    "LOfilter_backwash_ctr", "MEFOfilter_backwash_ctr", "AEFOfilter_backwash_ctr",
+    "ST_gravtk_level", "ST_aftsealtk_level_", "ST_fwdsealtk_level", "ST_Oilin_press", "ST_Oilout_temp", "ST_LOout_temp",
+    "Intermed_shaftbrg_temp" 
 ]
 
 PAGE_4_KEYS = [
