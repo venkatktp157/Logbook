@@ -105,12 +105,12 @@ def page_three():
         st.number_input("LO Filter Backwash Counter", key="LOfilter_backwash_ctr", step=1)
         st.number_input("ME FO Filter Backwash Counter", key="MEFOfilter_backwash_ctr", step=1) 
         st.number_input("AE FO Filter Backwash Counter", key="AEFOfilter_backwash_ctr", step=1)
-        st.number_input("ST Gravity Tank Level (mm)", key="ST_gravtk_level", step=0.01)
-        st.number_input("ST Aft Seal Tank Level (mm)", key="ST_aftsealtk_level_", step=0.01)
-        st.number_input("ST Fwd Seal Tank Level (mm)", key="ST_fwdsealtk_level", step=0.01)
-        st.number_input("ST Oil In Press (bar)", key="ST_Oilin_press", step=0.01)
-        st.number_input("ST Oil Out Temp (°C)", key="ST_Oilout_temp", step=0.01)
-        st.number_input("ST LO Out Temp (°C)", key="ST_LOout_temp", step=0.01)
+        st.number_input("SternTube Gravity Tank Level (mm)", key="ST_gravtk_level", step=0.01)
+        st.number_input("SternTube Aft Seal Tank Level (mm)", key="ST_aftsealtk_level_", step=0.01)
+        st.number_input("SternTube Fwd Seal Tank Level (mm)", key="ST_fwdsealtk_level", step=0.01)
+        st.number_input("SternTube Oil In Press (bar)", key="ST_Oilin_press", step=0.01)
+        st.number_input("SternTube Oil Out Temp (°C)", key="ST_Oilout_temp", step=0.01)
+        st.number_input("SternTube LO Out Temp (°C)", key="ST_LOout_temp", step=0.01)
         st.number_input("Intermediate Shaft Bearing Temp (°C)", key="Intermed_shaftbrg_temp", step=0.01)              
 
 def page_four():
