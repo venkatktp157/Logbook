@@ -528,21 +528,28 @@ def page_fourteen():
     
 
 def page_fifteen():
-    st.title("📈 Refrigeration, AC, and FW Generator Parameters")
-    st.number_input("Fish Room Temp (°C)", key="Fishroom_temp", step=0.01)
-    st.number_input("Meat Room Temp (°C)", key="Meatroom_temp", step=0.01)
-    st.number_input("Vegetable Room Temp (°C)", key="Vegroom_temp", step=0.01)
-    st.number_input("Dairy Room Temp (°C)", key="Dairy_temp", step=0.01)
-    st.number_input("Lobby Temp (°C)", key="Lobby_temp", step=0.01)
-    st.number_input("Refrigeration Compressor Suction Pressure (bar)", key="Refcomp_sucpress", step=0.01)
-    st.number_input("Refrigeration Compressor Discharge Pressure (bar)", key="Refcomp_dispress", step=0.01)
-    st.number_input("AC Compressor Suction Pressure (bar)", key="ACcomp_sucpress", step=0.01)
-    st.number_input("AC Compressor Discharge Pressure (bar)", key="ACcomp_dispress", step=0.01)
-    st.number_input("FW Generator Shell Temperature (°C)", key="FWG_shelltemp", step=0.01)
-    st.number_input("FW Generator Salinity (ppm)", key="FWG_salinity", step=0.01)
-    st.number_input("FW Generator Ejector Pressure (bar)", key="FWG_ejectorpress", step=0.01)
-    st.number_input("FW Generator Vacuum (mmHg)", key="FWG_vacuum", step=0.01)
-    st.number_input("FW Generator Flow Meter (m³/h)", key="FWG_flowmeter", step=0.01)
+    col1, col2 = st.columns(2)
+    
+    with col1:
+
+        st.title("📈 Ref. AC")
+        st.number_input("Fish Room Temp (°C)", key="Fishroom_temp", step=0.01)
+        st.number_input("Meat Room Temp (°C)", key="Meatroom_temp", step=0.01)
+        st.number_input("Vegetable Room Temp (°C)", key="Vegroom_temp", step=0.01)
+        st.number_input("Dairy Room Temp (°C)", key="Dairy_temp", step=0.01)
+        st.number_input("Lobby Temp (°C)", key="Lobby_temp", step=0.01)
+        st.number_input("Refrigeration Compressor Suction Pressure (bar)", key="Refcomp_sucpress", step=0.01)
+        st.number_input("Refrigeration Compressor Discharge Pressure (bar)", key="Refcomp_dispress", step=0.01)
+        st.number_input("AC Compressor Suction Pressure (bar)", key="ACcomp_sucpress", step=0.01)
+        st.number_input("AC Compressor Discharge Pressure (bar)", key="ACcomp_dispress", step=0.01)
+
+    with col2:
+        st.subheader("FW Generator")
+        st.number_input("FW Generator Shell Temperature (°C)", key="FWG_shelltemp", step=0.01)
+        st.number_input("FW Generator Salinity (ppm)", key="FWG_salinity", step=0.01)
+        st.number_input("FW Generator Ejector Pressure (bar)", key="FWG_ejectorpress", step=0.01)
+        st.number_input("FW Generator Vacuum (mmHg)", key="FWG_vacuum", step=0.01)
+        st.number_input("FW Generator Flow Meter (m³/h)", key="FWG_flowmeter", step=0.01)
 
 
           
