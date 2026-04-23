@@ -503,6 +503,6 @@ def page_thirteen():
 
     with col2:
         st.subheader("Summary 2")
-        st.number_input("Engine Load (%)", key="Engine_load", step=0.01)
+        st.number_input("Engine Load (%)", key="CPP_Engine_load", step=0.01)
         st.number_input("LO Filter Clog Indicator", key="LOfilterclog_ind", step=1)
         st.number_input("Remote Servo Pressure (bar)", key="Rem_servopress", step=0.01)       
