@@ -487,4 +487,22 @@ def page_twelve():
         st.number_input("Running Pump Load (amps)", key="Running_pump_load", step=0.01)
         st.number_input("Sump Tank Level (mm)", key="Sumptk_level", step=0.01)
 
-        
+def page_thirteen():
+    st.title("📈 Wartsila CPP Parameters")
+    col1, col2 = st.columns(2)
+
+    with col1:
+        st.subheader("Summary 1")
+        st.number_input("CPP OD-ring_A1temp (°C)", key="ODring_A1temp", step=0.01)
+        st.number_input("CPP OD-ring_A2temp (°C)", key="ODring_A2temp", step=0.01)
+        st.number_input("CPP OD-ring_B1temp (°C)", key="ODring_B1temp", step=0.01)
+        st.number_input("CPP OD-ring_B2temp (°C)", key="ODring_B2temp", step=0.01)
+        st.number_input("CW Press (bar)", key="CW_press", step=0.01)
+        st.number_input("Oil Main Supply Press (bar)", key="Oilmain_supplypress", step=0.01)
+        st.number_input("Oil Main Return Press (bar)", key="Oilmain_returnpress", step=0.01)        
+
+    with col2:
+        st.subheader("Summary 2")
+        st.number_input("Engine Load (%)", key="Engine_load", step=0.01)
+        st.number_input("LO Filter Clog Indicator", key="LOfilterclog_ind", step=1)
+        st.number_input("Remote Servo Pressure (bar)", key="Rem_servopress", step=0.01)       

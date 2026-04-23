@@ -30,7 +30,8 @@ pg = st.navigation([
     st.Page(ui.page_nine, title="Other Parameters", icon="📊"),
     st.Page(ui.page_ten, title="Boiler & EGB Parameters", icon="📊"),
     st.Page(ui.page_eleven, title="Navigation Parameters", icon="📊"),
-    st.Page(ui.page_twelve, title="CPP Common Parameters", icon="📊")
+    st.Page(ui.page_twelve, title="CPP Common Parameters", icon="📊"),
+    st.Page(ui.page_thirteen, title="Wartsila CPP parameters", icon="📊")
 ])
 
 # # --- SIDEBAR PARAMETER INPUTS---

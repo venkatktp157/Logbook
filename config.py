@@ -103,9 +103,14 @@ PAGE_12_KEYS =[
     "Servooilpress_ahead", "Servooilpress_astern", "CPP_Pitch", "Running_Pump_no", "Running_pump_load","Sumptk_level"
 ] 
 
+PAGE_13_KEYS = [
+    "ODring_A1temp", "ODring_A2temp", "ODring_B1temp", "ODring_B2temp", "CW_press", "Oilmain_supplypress", "Oilmain_returnpress",
+    "Engine_load", "LOfilterclog_ind", "Rem_servopress"
+]
+
 ALL_KEYS = (
     PAGE_1_KEYS + PAGE_2_KEYS + PAGE_3_KEYS + PAGE_4_KEYS + PAGE_5_KEYS + PAGE_6_KEYS 
-    + PAGE_7_KEYS+ PAGE_8_KEYS + PAGE_9_KEYS + PAGE_10_KEYS + PAGE_11_KEYS + PAGE_12_KEYS
+    + PAGE_7_KEYS+ PAGE_8_KEYS + PAGE_9_KEYS + PAGE_10_KEYS + PAGE_11_KEYS + PAGE_12_KEYS + PAGE_13_KEYS
 )
 
 DB_NAME = "engine_data.db"
