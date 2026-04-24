@@ -56,8 +56,7 @@ PAGE_7_KEYS = [
     "AE3_exh_1", "AE3_exh_2", "AE3_exh_3", "AE3_exh_4", "AE3_exh_5", "AE3_exh_6",
     "AE3_jw_1", "AE3_jw_2", "AE3_jw_3", "AE3_jw_4", "AE3_jw_5", "AE3_jw_6",
     "AE4_exh_1", "AE4_exh_2", "AE4_exh_3", "AE4_exh_4", "AE4_exh_5", "AE4_exh_6",
-    "AE4_jw_1", "AE4_jw_2", "AE4_jw_3", "AE4_jw_4", "AE4_jw_5", "AE4_jw_6",
-    "AE1_RHRS", "AE2_RHRS", "AE3_RHRS", "AE4_RHRS"
+    "AE4_jw_1", "AE4_jw_2", "AE4_jw_3", "AE4_jw_4", "AE4_jw_5", "AE4_jw_6"    
 ]
 
 PAGE_8_KEYS = [
@@ -77,7 +76,8 @@ PAGE_8_KEYS = [
     "AE1_LO_lvl", "AE2_LO_lvl", "AE3_LO_lvl", "AE4_LO_lvl",
     "AE1_WindingR_temp", "AE2_WindingR_temp", "AE3_WindingR_temp", "AE4_WindingR_temp",
     "AE1_WindingS_temp", "AE2_WindingS_temp", "AE3_WindingS_temp", "AE4_WindingS_temp",
-    "AE1_WindingT_temp", "AE2_WindingT_temp", "AE3_WindingT_temp", "AE4_WindingT_temp"
+    "AE1_WindingT_temp", "AE2_WindingT_temp", "AE3_WindingT_temp", "AE4_WindingT_temp",
+    "AE1_RHRS", "AE2_RHRS", "AE3_RHRS", "AE4_RHRS"
 ]
 
 PAGE_9_KEYS = [

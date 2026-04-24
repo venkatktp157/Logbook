@@ -242,8 +242,7 @@ def page_seven():
         st.subheader("AE1 Exh Temp")
         for i in range(1, 7):
             st.number_input(f"AE1 Exh Temp {i} (°C)", key=f"AE1_exh_{i}", step=0.01)
-        st.number_input("AE1 RHRS (h)", key="AE1_RHRS", step=0.01)
-
+        
     with col2:
         st.subheader("AE1 JW Temp")
         for i in range(1, 7):
@@ -252,8 +251,7 @@ def page_seven():
     with col3:
         st.subheader("AE2 Exh Temp")
         for i in range(1, 7):
-            st.number_input(f"AE2 Exh Temp {i} (°C)", key=f"AE2_exh_{i}", step=0.01) 
-        st.number_input("AE2 RHRS (h)", key="AE2_RHRS", step=0.01)
+            st.number_input(f"AE2 Exh Temp {i} (°C)", key=f"AE2_exh_{i}", step=0.01)         
 
     with col4:
         st.subheader("AE2 JW Temp")
@@ -263,8 +261,7 @@ def page_seven():
     with col5:
         st.subheader("AE3 Exh Temp")
         for i in range(1, 7):
-            st.number_input(f"AE3 Exh Temp {i} (°C)", key=f"AE3_exh_{i}", step=0.01)
-        st.number_input("AE3 RHRS (h)", key="AE3_RHRS", step=0.01)
+            st.number_input(f"AE3 Exh Temp {i} (°C)", key=f"AE3_exh_{i}", step=0.01)        
 
     with col6:
         st.subheader("AE3 JW Temp")
@@ -274,8 +271,7 @@ def page_seven():
     with col7:
         st.subheader("AE4 Exh Temp")
         for i in range(1, 7):
-            st.number_input(f"AE4 Exh Temp {i} (°C)", key=f"AE4_exh_{i}", step=0.01)
-        st.number_input("AE4 RHRS (h)", key="AE4_RHRS", step=0.01)
+            st.number_input(f"AE4 Exh Temp {i} (°C)", key=f"AE4_exh_{i}", step=0.01)        
 
     with col8:
         st.subheader("AE4 JW Temp")        
@@ -306,6 +302,7 @@ def page_eight():
         st.number_input("AE1 Winding R Temp (°C)", key="AE1_WindingR_temp", step=0.01)
         st.number_input("AE1 Winding S Temp (°C)", key="AE1_WindingS_temp", step=0.01)
         st.number_input("AE1 Winding T Temp (°C)", key="AE1_WindingT_temp", step=0.01)
+        st.number_input("AE1 RHRS (h)", key="AE1_RHRS", step=0.01)
 
     with col2:
         st.subheader("AE2 parameters")
@@ -326,6 +323,7 @@ def page_eight():
         st.number_input("AE2 Winding R Temp (°C)", key="AE2_WindingR_temp", step=0.01)
         st.number_input("AE2 Winding S Temp (°C)", key="AE2_WindingS_temp", step=0.01)
         st.number_input("AE2 Winding T Temp (°C)", key="AE2_WindingT_temp", step=0.01)
+        st.number_input("AE2 RHRS (h)", key="AE2_RHRS", step=0.01)
 
     with col3:
         st.subheader("AE3 parameters")
@@ -346,6 +344,7 @@ def page_eight():
         st.number_input("AE3 Winding R Temp (°C)", key="AE3_WindingR_temp", step=0.01)
         st.number_input("AE3 Winding S Temp (°C)", key="AE3_WindingS_temp", step=0.01)
         st.number_input("AE3 Winding T Temp (°C)", key="AE3_WindingT_temp", step=0.01)
+        st.number_input("AE3 RHRS (h)", key="AE3_RHRS", step=0.01)
 
     with col4:
         st.subheader("AE4 parameters")
@@ -365,7 +364,8 @@ def page_eight():
         st.number_input("AE4 LO Level (mm)", key="AE4_LO_lvl", step=0.01)
         st.number_input("AE4 Winding R Temp (°C)", key="AE4_WindingR_temp", step=0.01)
         st.number_input("AE4 Winding S Temp (°C)", key="AE4_WindingS_temp", step=0.01)
-        st.number_input("AE4 Winding T Temp (°C)", key="AE4_WindingT_temp", step=0.01)  
+        st.number_input("AE4 Winding T Temp (°C)", key="AE4_WindingT_temp", step=0.01) 
+        st.number_input("AE4 RHRS (h)", key="AE4_RHRS", step=0.01) 
 
 def page_nine():
     st.title("📈 Ambient & Consumptions")
