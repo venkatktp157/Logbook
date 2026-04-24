@@ -19,11 +19,11 @@ for key in ALL_KEYS:
 
 # --- NAVIGATION ---
 pg = st.navigation([
-    st.Page(ui.page_one, title="ME parameters 1", icon="📊"),
-    st.Page(ui.page_two, title="ME parameters 2", icon="📊"),
-    st.Page(ui.page_three, title="ME parameters 3", icon="📊"),
-    st.Page(ui.page_four, title="ME parameters 4", icon="📊"),
-    st.Page(ui.page_five, title="ME parameters 5", icon="📊"),
+    st.Page(ui.page_one, title="ME Parameters 1", icon="📊"),
+    st.Page(ui.page_two, title="ME Parameters 2", icon="📊"),
+    st.Page(ui.page_three, title="ME Parameters 3", icon="📊"),
+    st.Page(ui.page_four, title="ME Parameters 4", icon="📊"),
+    st.Page(ui.page_five, title="ME Parameters 5", icon="📊"),
     st.Page(ui.page_six, title="LNG Parameters", icon="📊"),
     st.Page(ui.page_seven, title="AE Parameters 1", icon="📊"),
     st.Page(ui.page_eight, title="AE Parameters 2", icon="📊"), 
