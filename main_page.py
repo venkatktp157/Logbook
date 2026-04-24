@@ -33,7 +33,8 @@ pg = st.navigation([
     st.Page(ui.page_twelve, title="CPP Common Parameters", icon="📊"),
     st.Page(ui.page_thirteen, title="Wartsila CPP parameters", icon="📊"),
     st.Page(ui.page_fourteen, title="KAMEWA CPP Parameters", icon="📊"),
-    st.Page(ui.page_fifteen, title="Ref. AC, FW Generator", icon="📊")    
+    st.Page(ui.page_fifteen, title="Ref. AC, FW Generator", icon="📊"),
+    st.Page(ui.page_sixteen, title="Tank Levels & Temps", icon="📊")    
 ])
 
 # # --- SIDEBAR PARAMETER INPUTS---

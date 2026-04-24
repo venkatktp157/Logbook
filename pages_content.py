@@ -552,4 +552,33 @@ def page_fifteen():
         st.number_input("FW Generator Flow Meter (m³/h)", key="FWG_flowmeter", step=0.01)
 
 
-          
+def page_sixteen():
+    st.title("📈 Tank levels & Temperatures")
+    col1, col2 = st.columns(2)
+
+    with col1:
+        st.subheader("Tank Levels (mm)")
+        st.number_input("HFO Service Tank Level (mm)", key="HFOserv_tklvl", step=0.01)
+        st.number_input("HFO Settling Tank Level (mm)", key="HFOsett_tklvl", step=0.01)
+        st.number_input("MG Service Tank Level (mm)", key="MGOserv_tklvl", step=0.01)
+        st.number_input("Cyl.oil Day Tank Level (mm)", key="CLOday_tklvl", step=0.01)
+        st.number_input("FW Port Tank Level (mm)", key="FW_P_tklvl", step=0.01)
+        st.number_input("FW Starboard Tank Level (mm)", key="FW_S_tklvl", step=0.01)
+        st.number_input("Drink Water Tank Level (mm)", key="Drinkwater_tklvl", step=0.01)
+        st.number_input("HFO Bunkertank Port Level (mm)", key="HFObunkertk_Plvl", step=0.01)
+        st.number_input("HFO Bunkertank Starboard Level (mm)", key="HFObunkertk_Slvl", step=0.01)
+        st.number_input("MGO Bunkertank Level (mm)", key="MGObunkertk_lvl", step=0.01)
+
+    with col2:
+        st.subheader("Tank Temperatures (°C)")
+        st.number_input("HF Service Tank Temperature (°C)", key="HFOserv_tktemp", step=0.01)
+        st.number_input("HFO Settling Tank Temperature (°C)", key="HFOsett_tktemp", step=0.01)
+        st.number_input("HFO Bunkertank Port Temperature (°C)", key="HFObunkertk_Ptemp", step=0.01)
+        st.number_input("HFO Bunkertank Starboard Temperature (°C)", key="HFObunkertk_Stemp", step=0.01)
+
+
+
+
+
+
+         
