@@ -13,6 +13,8 @@ st.set_page_config(layout='wide', page_title="Engine Data Logger")
 
 # Initialize DB and Session State
 db.init_db()
+nm.init_notes_db()    # ADD THIS: Initializes the new Notes SQLite DB
+
 for key in ALL_KEYS:
     if key not in st.session_state:
         st.session_state[key] = 0.0
@@ -131,12 +133,12 @@ with st.sidebar:
             st.subheader("Delete Specific Date")
             purge_date = st.date_input("Select Date to Purge", value=log_date, key="purge_date_picker")
             
-            # if st.button("❌ Clear This Date", use_container_width=True):
-            #     nm.delete_note_by_date(purge_date)
-            #     st.toast(f"Notes for {purge_date} removed.", icon="🗑️")
-            #     st.rerun()
+            if st.button("❌ Clear This Date", use_container_width=True):
+                nm.delete_note_by_date(purge_date) # This now runs a SQL DELETE command
+                st.toast(f"Notes for {purge_date} removed from DB.", icon="🗑️")
+                st.rerun()
 
-            # st.divider()
+            st.divider()
             
             st.subheader("Full Reset")
             confirm_purge = st.checkbox("Confirm Purge All Notes")
