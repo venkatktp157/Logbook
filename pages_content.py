@@ -575,7 +575,7 @@ def page_sixteen():
 
     with col2:
         st.subheader("Tank Temperatures (°C)")
-        st.number_input("HF Service Tank Temperature (°C)", key="HFOserv_tktemp", step=0.01)
+        st.number_input("HFO Service Tank Temperature (°C)", key="HFOserv_tktemp", step=0.01)
         st.number_input("HFO Settling Tank Temperature (°C)", key="HFOsett_tktemp", step=0.01)
         st.number_input("HFO Bunkertank Port Temperature (°C)", key="HFObunkertk_Ptemp", step=0.01)
         st.number_input("HFO Bunkertank Starboard Temperature (°C)", key="HFObunkertk_Stemp", step=0.01)
