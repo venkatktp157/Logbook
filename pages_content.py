@@ -564,7 +564,7 @@ def page_sixteen():
         st.subheader("Tank Levels (mm)")
         st.number_input("HFO Service Tank Level (mm)", key="HFOserv_tklvl", step=0.01)
         st.number_input("HFO Settling Tank Level (mm)", key="HFOsett_tklvl", step=0.01)
-        st.number_input("MG Service Tank Level (mm)", key="MGOserv_tklvl", step=0.01)
+        st.number_input("MGO Service Tank Level (mm)", key="MGOserv_tklvl", step=0.01)
         st.number_input("Cyl.oil Day Tank Level (mm)", key="CLOday_tklvl", step=0.01)
         st.number_input("FW Port Tank Level (mm)", key="FW_P_tklvl", step=0.01)
         st.number_input("FW Starboard Tank Level (mm)", key="FW_S_tklvl", step=0.01)
